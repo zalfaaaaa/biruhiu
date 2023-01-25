@@ -8,10 +8,40 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Admin</title>
+    <style>
+        .cardBox{
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 30px;
+        }
+        .cardBox .card1{
+            position: relative;
+            background:#1d1d1d;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        }
+    </style>
 </head>
-<body style="font-family:'poppins', sans-serif;">
+<!-- nav -->
+<body style="font-family:'poppins', sans-serif;background-color:#849FBD">
+<nav class="navbar navbar-dark" style="background-color:#1d1d1d;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="totoro.png" alt="" width="40" class="d-inline-block ">
+      &nbsp; Pembayaran SPP Vecna
+    </a>
+  </div>
+</nav>
     <!-- sidebar -->
     <div class="container-fluid">
     <div class="row flex-nowrap" >
@@ -33,29 +63,21 @@
                 <!-- batas     -->
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 fas-fa-home"></i> <span class="ms-1 d-none d-sm-inline text-light">Home</span>
-                        </a>
+                        <a href="#" class="nav-link align-middle px-0 text-light"><ion-icon name="home"></ion-icon>&nbsp;Home</a>
                     </li>
                     <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 fas-fa-file-alt"></i> <span class="ms-1 d-none d-sm-inline text-light">Student Data</span> </a>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="reader"></ion-icon>&nbsp; Student Data</a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 fas-fa-file-alt"></i> <span class="ms-1 d-none d-sm-inline text-light">Officer Data</span></a>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="reader"></ion-icon>&nbsp; Staff Data</a>
                     </li>
                     <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline text-light">SPP Data</span></a>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="reader"></ion-icon>&nbsp; SPP Data</a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline text-light">Payment Entry</span> </a>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="folder-open"></ion-icon>&nbsp; Payment Entry</a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline text-light">History Payment</span> </a>
+                        <li><a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="timer"></ion-icon>&nbsp; History Payment</a>                    
                     </li>
                 </ul>
                 <hr>
@@ -63,13 +85,17 @@
         </div>
         <!-- end -->
         <div class="col py-3">
-            <h3>Left Sidebar with Submenus</h3>
-            <p class="lead">
-                An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
-                menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.</p>
-            <ul class="list-unstyled">
-                <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
-            </ul>
+            <div class="cardBox">
+                <div class="card1">
+                    <div class="">
+                        <div class="numbers">Staff</div>
+                        <div class="cardname">Officer</div>
+                    </div>
+                    <div class="iconbox">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
