@@ -1,3 +1,8 @@
+<?php
+
+include('../connect.php');
+$query = $maru->query('SELECT * FROM student')->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +17,14 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Admin</title>
     <style>
-        .cardBox{
-            position: relative;
-            width: 100%;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            grid-gap: 30px;
-        }
-        .cardBox .card1{
-            position: relative;
-            background:#1d1d1d;
-            color: white;
-            padding: 30px;
+        .table{
+            background-color: #1d1d1d;
+            width: 80%;
             border-radius: 20px;
-            display: flex;
-            justify-content: space-between;
-            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            position: relative;
+            margin-left: 100px;
         }
     </style>
 </head>
@@ -38,7 +34,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="totoro.png" alt="" width="40" class="d-inline-block ">
-      &nbsp; Pembayaran SPP Vecna
+      &nbsp;SPP Vecna Payment
     </a>
   </div>
 </nav>
@@ -66,7 +62,7 @@
                         <a href="#" class="nav-link align-middle px-0 text-light"><ion-icon name="home"></ion-icon>&nbsp;Home</a>
                     </li>
                     <li>
-                        <a href="studata.php" class="nav-link px-0 align-middle text-light"><ion-icon name="reader"></ion-icon>&nbsp; Student Data</a>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="reader"></ion-icon>&nbsp; Student Data</a>
                     </li>
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light"><ion-icon name="reader"></ion-icon>&nbsp; Staff Data</a>
@@ -85,34 +81,37 @@
         </div>
         <!-- end -->
         <div class="col py-3">
-            <div class="cardBox">
-                <div class="card1">
-                    <div class="">
-                        <div class="numbers">Staff</div>
-                        <div class="cardname">Petugas</div>
-                    </div>
-                    <div class="iconbox">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="card1">
-                    <div class="">
-                        <div class="numbers">Student</div>
-                        <div class="cardname">Siswa</div>
-                    </div>
-                    <div class="iconbox">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="card1">
-                    <div class="">
-                        <div class="numbers">SPP</div>
-                    </div>
-                    <div class="iconbox">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                </div>
-            </div>
+        <div class="container mt-5">
+        <div class="container mt-4">
+            <h1></h1>
+        </div>
+        <table class="table table-borderless table-hover text-center text-white table-responsive">
+            <thead>
+            <tr>
+                <th scope="col">Nisn</th>
+                <th scope="col">Nis</th>
+                <th scope="col">Name</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+                <?php foreach ($query as $querys):?>
+            <tbody>
+                <tr>
+                <td><?=$query['nisn']?></td>
+                <td><?=$query['nis']?></td>
+                <td><?=$query['name']?></td>
+                <td><?=$query['adress']?></td>
+                <td><?=$query['phoneno']?></td>
+                <td></td>
+            </tr>
+            </tbody>
+                <?php endforeach ?>
+        </table>
+        <div class="mt3">
+        </div>
+        </div>
         </div>
     </div>
 </div>
