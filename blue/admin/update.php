@@ -81,7 +81,7 @@ if(!isset($_SESSION['username'])){
                 </div>
                 <div class="mb-3">
                     <label for="form-label" class="fw-bold mb-1">Image</label>
-                    <input type="file" name="img" class="form-control rounded-3" required>
+                    <input type="file" name="img" class="form-control rounded-3" value="<?=$data['img']?>" required>
                 </div>
                 <div class="mt-3 text-center">
                     <button type="submit" class="btn btn text-center fw-bold shadow" style="width:150px;background-color:#8DCBE6;border-radius:12px">Login</button>

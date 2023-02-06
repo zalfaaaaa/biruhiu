@@ -42,9 +42,9 @@ if(!isset($_SESSION['username'])){
             justify-content: space-between;
             box-shadow: 0 8px 26px rgba(0, 0, 0, 0.09);
         }
-        .cardBox .card1 :hover{
-            background: #1e1e1e;
-            color: #fff;
+        .card1:hover{
+            background: #f2f2f2;
+            color: #000;
         }
     </style>
 </head>
@@ -67,7 +67,7 @@ if(!isset($_SESSION['username'])){
                     <!-- profile -->
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/<?=$query['img']; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
+                        <img src="img/<?= $_SESSION['img']; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
                         <span class="d-none d-sm-inline mx-1" style="font-weight: bold;"><?php echo $_SESSION['username'];?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="border-radius: 20px;background-color:#1d1d1d">

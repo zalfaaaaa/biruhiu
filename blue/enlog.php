@@ -12,11 +12,13 @@ $data = $query->fetch();
 
 if($query->rowCount()> 0){
     if($data['level']=="admin"){
+        $_SESSION['img'] = $data['img'];
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
         $_SESSION['level'] = "admin";
         header('location:admin/house.php');
     }else if($data['level']=="staff"){
+        $_SESSION['img'] = $data['img'];
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
         $_SESSION['level'] = "staff";

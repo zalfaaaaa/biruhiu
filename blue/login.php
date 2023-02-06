@@ -52,7 +52,7 @@ session_start();
                 </div>
                 <div class="mb-3">
                     <label for="form-label" class="fw-bold mb-1">Password</label>
-                    <input type="text" name="password" class="form-control rounded-3" placeholder="******" required>
+                    <input type="password" name="password" class="form-control rounded-3" placeholder="******" required>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary fw-bold" style="float:right">Login</button>
