@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
     <style>
         .cardBox{
             position: relative;
-            width: 100%;
+            /* width: 100%; */
             padding: 10px;
             display: grid;
             grid-template-columns: repeat(4,1fr);
@@ -34,8 +34,10 @@ if(!isset($_SESSION['username'])){
         }
         .cardBox .card1{
             position: relative;
-            background:#1d1d1d;
-            color: white;
+            background:#fff;
+            color: black;
+            height: 350%;
+            width: 300%;
             padding: 30px;
             border-radius: 20px;
             display: flex;
@@ -43,8 +45,8 @@ if(!isset($_SESSION['username'])){
             box-shadow: 0 8px 26px rgba(0, 0, 0, 0.09);
         }
         .card1:hover{
-            background: #f2f2f2;
-            color: #000;
+            background: #1d1d1d;
+            color: #f2f2f2;
         }
     </style>
 </head>
@@ -67,7 +69,7 @@ if(!isset($_SESSION['username'])){
                     <!-- profile -->
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/<?= $_SESSION['img']; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
+                        <img src="../admin/img/<?= $_SESSION['img']; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
                         <span class="d-none d-sm-inline mx-1" style="font-weight: bold;"><?php echo $_SESSION['username'];?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="border-radius: 20px;background-color:#1d1d1d">
@@ -83,7 +85,7 @@ if(!isset($_SESSION['username'])){
                     <!-- end profile -->
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start fw-bold" id="menu">
                         <li class="nav-item">
-                            <a href="house.php" class="nav-link align-middle px-0 text-light"><ion-icon name="home"></ion-icon>&nbsp;Home</a>
+                            <a href="home.php" class="nav-link align-middle px-0 text-light"><ion-icon name="home"></ion-icon>&nbsp;Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="history.php" class="nav-link align-middle px-0 text-light"><ion-icon name="hourglass"></ion-icon>&nbsp;History</a>
@@ -92,23 +94,6 @@ if(!isset($_SESSION['username'])){
                             <a href="enpay.php" class="nav-link align-middle px-0 text-light"><ion-icon name="logo-paypal"></ion-icon>&nbsp;Entry Payment</a>
                         </li>
                         
-                        <li class="nav-item">
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link align-middle px-0 text-light"><ion-icon name="file-tray-stacked"></ion-icon>&nbsp; Data &emsp;<ion-icon name="caret-down"></ion-icon></a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="spp.php" class="nav-link px-0 text-white"><ion-icon name="documents"></ion-icon>&nbsp;SPP</a>
-                                </li>
-                                <li class="w-100">
-                                    <a href="student.php" class="nav-link px-0 text-white"><ion-icon name="people"></ion-icon>&nbsp;Student</a>
-                                </li>
-                                <li class="w-100">
-                                    <a href="staff.php" class="nav-link px-0 text-white"><ion-icon name="people"></ion-icon>&nbsp;Staff</a>
-                                </li>
-                                <li class="w-100">
-                                    <a href="cls.php" class="nav-link px-0 text-white"><ion-icon name="book"></ion-icon>&nbsp;Class</a>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -119,30 +104,19 @@ if(!isset($_SESSION['username'])){
             <div class="card1">
                 <div class="">
                     <div class="numbers">History</div>
-                    <div class="cardname"></div>
                 </div>
                 <div class="iconbox">
                     <ion-icon name="home"></ion-icon>
                 </div>
             </div>
-            <div class="card1">
+            <!-- <div class="card1">
                 <div class="">
                     <div class="numbers">Entry Payment</div>
-                    <div class="cardname">Pembayaran</div>
                 </div>
                 <div class="iconbox">
                     <ion-icon name="logo-paypal"></ion-icon>
                 </div>
-            </div>
-            <div class="card1">
-                <div class="">
-                    <div class="numbers">Data</div>
-                    <div class="cardname">student, staff, spp, class</div>
-                </div>
-                <div class="iconbox">
-                    <ion-icon name="file-tray-stacked"></ion-icon>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>  
     <!-- end content  -->

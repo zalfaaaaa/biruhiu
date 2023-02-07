@@ -2,13 +2,8 @@
 
 session_start();
 
-if(isset($_SESSION['username'])){
-  if ($_SESSION['level']=='admin'){
-    header("location:admin/house.php");
-  }
-  if ($_SESSION['level']=='staff'){
-    header("location:staff/home.php");
-  }
+if(isset($_SESSION['nisn'])){
+    header("location:home.php");
 } 
 ?>
 <!DOCTYPE html>
@@ -41,14 +36,6 @@ if(isset($_SESSION['username'])){
 <body style="background-color: #E0F1F1;font-family: 'Poppins', sans-serif;">
 <div class="container" style="margin-top: 80px;">
   <div class="row">
-    <?php if(isset($_GET['error'])) : ?>
-      <div class="container-fluid">
-        <div class="alert alert-danger text-center mb-3" style="width:340px;margin:auto;border-radius:30px" role="alert">
-          <a href="login.php" class="btn btn-close" type="button" style="float: left;"></a>
-          <span class="text-center fw-bold"><?= $_GET['error']?><ion-icon name="alert" class="fs-5"></ion-icon></span>
-        </div>
-      </div>
-    <?php endif ?>
     <div class="col">
       <!-- Column -->
     </div>
@@ -63,12 +50,8 @@ if(isset($_SESSION['username'])){
                 <h6 class="fw-normal"><em>Log into your account</em></h6>
                 <hr class="divider">
                 <div class="mb-3 mt-5">
-                    <label for="form-label" class="fw-bold mb-1">Username</label>
-                    <input type="text" name="username" class="form-control rounded-3" placeholder="Mark Lee" required>
-                </div>
-                <div class="mb-3">
-                    <label for="form-label" class="fw-bold mb-1">Password</label>
-                    <input type="password" name="password" class="form-control rounded-3" placeholder="******" required>
+                    <label for="form-label" class="fw-bold mb-1">Nisn</label>
+                    <input type="text" name="nisn" class="form-control rounded-3" placeholder="000000" required>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary fw-bold" style="float:right">Login</button>

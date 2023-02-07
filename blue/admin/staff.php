@@ -67,7 +67,7 @@ if(!isset($_SESSION['username'])){
                     <!-- profile -->
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://i.pinimg.com/564x/b3/ce/ba/b3cebae5052eb99a5213ffedf2411693.jpg" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
+                        <img src="img/<?= $_SESSION['img']; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
                         <span class="d-none d-sm-inline mx-1" style="font-weight: bold;"><?php echo $_SESSION['username'];?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="border-radius: 20px;background-color:#1d1d1d">
@@ -119,7 +119,7 @@ if(!isset($_SESSION['username'])){
         <h1 class="d-flex"><ion-icon name="people"></ion-icon>&nbsp;Staff Data</h1>
         <a href="newstaff.php" class="btn btn-primary btn-sm mb-3" style="float:right;">New</a>
         </div>
-        <table class="table table-borderless table-hover table-responsive mt-4 text-center" style="border-radius: 20px;background:#fff;box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <table class="table table-borderless table-hover table-responsive mt-4 text-center" style="border-radius:20px;background:#fff;box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <thead>
                 <tr>
                 <th scope="col">No</th>
@@ -143,7 +143,7 @@ if(!isset($_SESSION['username'])){
                 <td><img src="img/<?=$query['img']; ?>" width="100" height="100" /></td>
                 <td><?=$query['level']?></td>
                 <td class="align-items-center">
-                    <a href="update.php?idstaff=<?=$query['idstaff'];?>" class="btn btn-sm text-white mb-3" style="background-color: #557153;border-radius:10px"><ion-icon name="create" style="font-size: 20px;"></ion-icon>Update</a>
+                    <a href="upd-staff.php?idstaff=<?=$query['idstaff'];?>" class="btn btn-sm text-white mb-3" style="background-color: #557153;border-radius:10px"><ion-icon name="create" style="font-size: 20px;"></ion-icon>Update</a>
                     <a href="del-staff.php?idstaff=<?=$query['idstaff'];?>" class="btn btn-danger mb-3 btn-sm text-white" style="border-radius:10px"><ion-icon name="trash-bin" class="text-center" style="font-size: 20px;"></ion-icon>&nbsp;Delete</a>
                 </td>
             </tr>

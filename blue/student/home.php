@@ -3,10 +3,10 @@
 session_start();
 
 include('../connect.php');
-$query = $maru->query('SELECT * FROM staff')->fetchAll();
+$query = $maru->query('SELECT * FROM student')->fetchAll();
 
-if(!isset($_SESSION['username'])){
-    header("location:../login.php");
+if(!isset($_SESSION['nisn'])){
+    header("location:login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -67,8 +67,8 @@ if(!isset($_SESSION['username'])){
                     <!-- profile -->
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/<?= $_SESSION['img']; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
-                        <span class="d-none d-sm-inline mx-1" style="font-weight: bold;"><?php echo $_SESSION['username'];?></span>
+                        <img src="../admin/img/<?= $_SESSION['img']?>" alt="hugenerd" width="30" height="30" class="rounded-circle">&nbsp;
+                        <span class="d-none d-sm-inline mx-1" style="font-weight: bold;"><?php echo $_SESSION['name'];?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="border-radius: 20px;background-color:#1d1d1d">
                         <li>
@@ -76,7 +76,7 @@ if(!isset($_SESSION['username'])){
                         </li>
                         <hr class="dropdown-divider">
                         <li>
-                            <a href="../logout.php" class="dropdown-item"><ion-icon name="log-out"></ion-icon>&nbsp;Logout</a>
+                            <a href="logout.php" class="dropdown-item"><ion-icon name="log-out"></ion-icon>&nbsp;Logout</a>
                         </li>
                     </ul>
                     </div>
@@ -87,27 +87,6 @@ if(!isset($_SESSION['username'])){
                         </li>
                         <li class="nav-item">
                             <a href="history.php" class="nav-link align-middle px-0 text-light"><ion-icon name="hourglass"></ion-icon>&nbsp;History</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="enpay.php" class="nav-link align-middle px-0 text-light"><ion-icon name="logo-paypal"></ion-icon>&nbsp;Entry Payment</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link align-middle px-0 text-light"><ion-icon name="file-tray-stacked"></ion-icon>&nbsp; Data &emsp;<ion-icon name="caret-down"></ion-icon></a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="spp.php" class="nav-link px-0 text-white"><ion-icon name="documents"></ion-icon>&nbsp;SPP</a>
-                                </li>
-                                <li class="w-100">
-                                    <a href="student.php" class="nav-link px-0 text-white"><ion-icon name="people"></ion-icon>&nbsp;Student</a>
-                                </li>
-                                <li class="w-100">
-                                    <a href="staff.php" class="nav-link px-0 text-white"><ion-icon name="people"></ion-icon>&nbsp;Staff</a>
-                                </li>
-                                <li class="w-100">
-                                    <a href="cls.php" class="nav-link px-0 text-white"><ion-icon name="book"></ion-icon>&nbsp;Class</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -123,24 +102,6 @@ if(!isset($_SESSION['username'])){
                 </div>
                 <div class="iconbox">
                     <ion-icon name="home"></ion-icon>
-                </div>
-            </div>
-            <div class="card1">
-                <div class="">
-                    <div class="numbers">Entry Payment</div>
-                    <div class="cardname">Pembayaran</div>
-                </div>
-                <div class="iconbox">
-                    <ion-icon name="logo-paypal"></ion-icon>
-                </div>
-            </div>
-            <div class="card1">
-                <div class="">
-                    <div class="numbers">Data</div>
-                    <div class="cardname">student, staff, spp, class</div>
-                </div>
-                <div class="iconbox">
-                    <ion-icon name="file-tray-stacked"></ion-icon>
                 </div>
             </div>
         </div>

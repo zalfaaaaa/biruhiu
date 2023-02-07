@@ -26,5 +26,5 @@ if($query->rowCount()> 0){
     }
 } 
 else {
-    header('location:login.php?error=$pesan_error');
+    header('location:login.php?error=username or password invalid');
 }
